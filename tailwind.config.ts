@@ -1,29 +1,39 @@
 import type { Config } from 'tailwindcss';
 import daisyui from 'daisyui';
 
-const config: Config = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  
-  
-  plugins: [
-    daisyui,
-  ],
+interface DaisyUIConfig {
+    themes?: string[] | { [key: string]: any }[];
+    darkTheme?: string;
+    prefix?: string;
+}
 
-  daisyui: {
-    themes: [
-      'light', 
-      'dark', 
-    ], 
+interface CustomConfig extends Config {
+    daisyui?: DaisyUIConfig;
+}
+
+
+const config: CustomConfig = {
+    content: [
+        './pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './components/**/*.{js,ts,jsx,tsx,mdx}',
+        './app/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/**/*.{js,ts,jsx,tsx,mdx}',
+    ],
     
-    darkTheme: "dark", 
-    
-    prefix: "", 
-  },
+    plugins: [
+        daisyui, 
+    ],
+
+    daisyui: { 
+        themes: [
+            'light', 
+            'dark', 
+        ], 
+        
+        darkTheme: "dark", 
+        
+        prefix: "", 
+    },
 };
 
 export default config;
