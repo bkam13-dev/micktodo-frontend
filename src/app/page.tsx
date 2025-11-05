@@ -10,6 +10,7 @@ import ListTasks from "./components/listTasks"
 import SearchBar from "./components/searchBar"
 import AddTask from "./components/addTask"
 import TasksContext from "./context/tasksContext";
+import { Analytics } from "@vercel/analytics/next"
 
 
 export default function Home() {
@@ -78,6 +79,7 @@ const valueTasksContext = {
         <SearchBar />
         <AddTask/>
         <ListTasks />
+        <Analytics/>
     </div>
   </TasksContext.Provider>
   
