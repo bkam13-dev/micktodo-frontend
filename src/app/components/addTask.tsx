@@ -48,14 +48,6 @@ export default function AddTask(){
     };
     
     
-        const closeModal = (e: MouseEvent<HTMLButtonElement>) => {
-            e.preventDefault();
-    
-            if (modalRef.current) {
-                modalRef.current.showModal();
-            }
-        
-        };
 
 
     return <div className="w-12/12 relative h-0 ">
@@ -64,7 +56,7 @@ export default function AddTask(){
         <dialog id="addTaskModal" ref={modalRef} className="modal backdrop-blur ">
             <div className="modal-box flex flex-col gap-5 bg-[#006989] dark:bg-[#075056]">
                 <form method="dialog">
-                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={closeModal}>
+                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                         <CircleX color="#FDF6E3" />
                     </button>
                     <h1 className="flex justify-center font-bold">Ajouter une tâche</h1>
